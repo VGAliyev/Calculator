@@ -19,22 +19,34 @@ public class Controller {
     }
 
     @RequestMapping("/plus")
-    public String plus(@RequestParam int num1, @RequestParam int num2) {
+    public String plus(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
+        if (num1 == null || num2 == null) {
+            return "Оба аргумента должны быть переданы! Попробуйте ещё раз.";
+        }
         return calculatorService.plus(num1, num2);
     }
 
     @RequestMapping("/minus")
-    public String minus(@RequestParam int num1, @RequestParam int num2) {
+    public String minus(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
+        if (num1 == null || num2 == null) {
+            return "Оба аргумента должны быть переданы! Попробуйте ещё раз.";
+        }
         return calculatorService.minus(num1, num2);
     }
 
     @RequestMapping("/multiply")
-    public String multiply(@RequestParam int num1, @RequestParam int num2) {
+    public String multiply(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
+        if (num1 == null || num2 == null) {
+            return "Оба аргумента должны быть переданы! Попробуйте ещё раз.";
+        }
         return calculatorService.multiply(num1, num2);
     }
 
     @RequestMapping("/divide")
-    public String divide(@RequestParam int num1, @RequestParam int num2) {
+    public String divide(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
+        if (num1 == null || num2 == null) {
+            return "Оба аргумента должны быть переданы! Попробуйте ещё раз.";
+        }
         return calculatorService.divide(num1, num2);
     }
 }

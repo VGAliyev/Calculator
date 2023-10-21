@@ -11,21 +11,24 @@ public class CalculatorServiceImpl implements CalculatorService {
 
     @Override
     public String plus(int num1, int num2) {
-        return String.valueOf(num1 + num2);
+
+        return num1 + " + " + num2 + " = " + (num1 + num2);
     }
 
     @Override
     public String minus(int num1, int num2) {
-        return String.valueOf(num1 - num2);
+
+        return num1 + " - " + num2 + " = " + (num1 - num2);
     }
 
     @Override
     public String multiply(int num1, int num2) {
-        return String.valueOf(num1 * num2);
+
+        return num1 + " * " + num2 + " = " + (num1 * num2);
     }
 
     @Override
     public String divide(int num1, int num2) {
-        return (num2 != 0) ? String.valueOf((double) num1 / num2) : "На нуль делить нельзя!";
+        return (num2 != 0) ? num1 + " / " + num2 + " = " + ((double) num1 / num2) : "На нуль делить нельзя!";
     }
 }
